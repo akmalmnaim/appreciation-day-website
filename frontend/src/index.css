@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Color Variables */
+  --primary-bg-color: #f5f5f5; /* Light Gray Background */
+  --primary-text-color: #000000; /* Black Text */
+  --input-bg-color: #ffffff; /* White Input Background */
+  --input-text-color: #000000; /* Black Input Text */
+  --button-bg-color: #005eb8; /* Deep Blue Button */
+  --button-text-color: #ffffff; /* White Button Text */
+  --accent-color: #ff4e00; /* Vibrant Red Accent */
+  --flex-bg-color: #ffffff; /* Background color for flex items */
+  --flex-border-color: #cccccc; /* Border color for flex items */
+
+  /* Secondary Color Variables */
+  --secondary-bg-color: #e0f7fa; /* Light Cyan Background */
+  --secondary-text-color: #004d40; /* Dark Teal Text */
+  --secondary-button-bg-color: #00897b; /* Teal Button */
+  --secondary-button-text-color: #ffffff; /* White Button Text */
+  --secondary-accent-color: #ffab00; /* Bright Yellow Accent */
+}
+
+/* Additional Styles */
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  font-family: "Arial", sans-serif; /* Clean Font */
+}
+
+input,
+select {
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+}
+
+button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+}
+
+/* Container Styles */
+.container {
+  background-color: var(--flex-bg-color); /* Container background */
+  border: 1px solid var(--flex-border-color); /* Container border */
+  border-radius: 5px; /* Rounded corners for items */
+  padding: 16px; /* Padding for items */
+}
+
+/* Secondary Container Styles */
+.container-secondary {
+  background-color: var(--secondary-bg-color); /* Secondary container background */
+  border: 1px solid var(--flex-border-color); /* Secondary container border */
+  border-radius: 5px; /* Rounded corners for secondary items */
+  padding: 16px; /* Padding for secondary items */
+}
+
+/* Hover Effects */
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Secondary Button Hover Effects */
+button.secondary:hover {
+  background-color: var(--secondary-accent-color); /* Bright Yellow on hover */
+}
+
+/* Transisi untuk elemen yang fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-20px); /* Mulai dari posisi lebih tinggi */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Menggunakan ease-in-out untuk transisi yang lebih halus */
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+/* Transisi slide-out */
+.slide-out {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Menggunakan ease-in-out */
+}
+
+.slide-out.left {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Transisi slide-in */
+.slide-in {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Menggunakan ease-in-out */
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0);
+}
